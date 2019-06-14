@@ -1,0 +1,28 @@
+﻿{% extends 'layout.html' %}
+{% block content %}
+		<p style="margin-left:50px; color:grey"><strong>Dados Gerais</strong></p> 
+		<p style="margin-left:50px; margin-top:0px"><strong>Bem-Vindo, Subway!</strong></p>
+		
+		<!--Display das aulas de hoje-->
+		<div style="margin-left:50px; margin-top:5px; height:150px; width:990px; background-color:white">Aulas Hoje</div>
+		
+		<!--Display de Provas-->
+			<!--Primeira Columna-->
+		{% for i in coluna1 %}
+				<div style="margin-left:50px; margin-top:30px; height:300px; width:314px; background-color:white">{{i}}</div>
+		{% endfor %}
+			<!--Segunda Columna-->
+		<div style="margin-top:-{{correcao}}"></div>
+		{% for i in coluna2 %}
+			<div style="margin-left:384px; margin-top:30px; height:300px; width:314px; background-color:white">{{i}}</div>
+		{% endfor %}
+			<!--Terceira Columna-->
+		<div style="margin-top:-{{correcao}}"></div>
+		{% for i in coluna3 %}
+			<div style="margin-left:718px; margin-top:30px; height:300px; width:314px; background-color:white">{{i}}</div>
+		{% endfor %}
+		
+		
+		<div style="margin-left:50px; margin-top:30px; height:70px; width:990px; background-color:white">Carga Horária do semestre</div>
+		<div style="margin-left:50px; margin-top:5px; margin-bottom:100px; height:70px; width:990px; background-color:white">Carga Horária do curso</div>
+{% endblock %}

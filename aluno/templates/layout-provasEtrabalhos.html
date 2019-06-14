@@ -1,0 +1,50 @@
+﻿{% extends 'layout.html' %}
+	{% block content %}
+		{% load static %}
+		<!--Cabeçalho-->
+		<p style="margin-left:50px; color:grey"><strong>Provas e Trabalhos</strong></p> 
+		
+		<!--Display Nota das provas divididas em três colunas divididas igualmente se possível-->
+		<p style="margin-left:50px; margin-top:0px"><strong>Provas</strong></p>
+			<!--Primeira Columna-->
+		{% for i in coluna1 %}
+				<div style="margin-left:50px; margin-top:20px; height:200px; width:314px; background-color:white">{{i}}</div>
+		{% endfor %}
+			<!--Segunda Columna-->
+		<div style="margin-top:-{{correcao}}"></div>
+		{% for i in coluna2 %}
+			<div style="margin-left:384px; margin-top:20px; height:200px; width:314px; background-color:white">{{i}}</div>
+		{% endfor %}
+			<!--Terceira Columna-->
+		<div style="margin-top:-{{correcao}}"></div>
+		{% for i in coluna3 %}
+			<div style="margin-left:718px; margin-top:20px; height:200px; width:304px; background-color:white">{{i}}</div>
+		{% endfor %}
+		
+		<!--Display horizontal das notas de trabalhos com scrollbar-->
+		<p style="margin-left:50px; margin-top:50px"><strong>Trabalhos</strong></p>
+		{% if proximos %}
+			<div style="margin-left:30px; width:1000px; height:200px; overflow-x:{{scroll}};">
+				<table><tr>
+					{% for i in proximos %}
+						<td>
+							<div style="margin-left:20px; margin-top:5px; height:150px; width:314px; background-color:white">{{i}}</div>
+						</td>
+					{% endfor %}
+				</tr></table>
+			</div>
+		{% endif %}
+		<!--<div style="margin-left:384px; margin-top:-150px; height:150px; width:314px; background-color:white">Próximo trabalho</div>
+		<div style="margin-left:718px; margin-top:-150px; height:150px; width:324px; background-color:white">Próximo trabalho</div>-->
+		
+		<!--Display de notas de trabalhos-->
+		{% if feitos %}
+			<div style="margin-left:50px; margin-top:30px; height:300px; width:648px; background-color:white">Notas de trabalhos</div>
+			<div style="margin-left:718px; margin-top:-300px; height:300px; width:324px; background-color:white">Alguma outra coisa</div>
+		{% endif %}
+		
+		<div style="margin-left:50px; margin-top:30px; height:70px; width:990px; background-color:white">Carga Horária do semestre</div>
+		<div style="margin-left:50px; margin-top:5px; height:70px; width:990px; background-color:white">Carga Horária do curso</div>
+		
+	{% endblock %}
+</html>

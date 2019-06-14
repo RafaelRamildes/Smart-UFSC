@@ -1,0 +1,36 @@
+﻿{% extends 'layout.html' %}
+	{% block content %}
+		{% load static %}
+		
+		<p style="margin-left:50px; color:grey"><strong>EGR5606</strong></p> 
+		<p style="margin-left:50px; margin-top:0px"><strong>Desenho Técnico</strong></p>
+		
+		<!--Primeira linha de informações uteis (os slots podem ser preenchidos com terefas ou provas)-->
+		<div style="margin-left:50px; margin-top:5px; height:200px; width:314px; background-color:white">Proxima {{prox_aula}}</div>
+		{% if slot1 %}
+			<div style="margin-left:384px; margin-top:-200px; height:200px; width:314px; background-color:white">Proxima {{slot1}}</div>
+		{% endif %}
+		{% if slot1 %}
+			<div style="margin-left:718px; margin-top:-200px; height:200px; width:324px; background-color:white">Proxima {{slot2}}</div>
+		{% endif %}
+		
+		<!--Uma linha de desempenho na metéria-->
+		<div style="margin-left:50px; margin-top:30px; height:300px; width:648px; background-color:white">Frequência</div>
+		<div style="margin-left:718px; margin-top:-300px; height:300px; width:324px; background-color:white">Nota Relativo A Turma</div>
+		
+		<!--Uma linha para melhorar o desempenho-->
+		<div style="margin-left:50px; margin-top:30px; height:300px; width:648px; background-color:white; padding-top:10px">
+			<p style="margin-left:50px; color:grey"><strong>Tarefas</strong></p> 
+			<div class="list-group" style="height:280; margin-top:-10px; overflow-y:scroll">
+				{% for i in tarefas %}
+					<a href="#" class="list-group-item list-group-item-action">{{i}}</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div style="margin-left:718px; margin-top:-300px; height:320px; width:324px; background-color:white">Monitorias e Aulas</div>
+		
+		
+		<div style="margin-left:50px; margin-top:30px; height:70px; width:990px; background-color:white">Carga Horária do semestre</div>
+		<div style="margin-left:50px; margin-top:5px; margin-bottom:100px; height:70px; width:990px; background-color:white">Carga Horária do curso</div>
+	
+	{% endblock %}
