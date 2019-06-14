@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html><html>
+<head>
+	{% load static %}
+    <title>Login</title>
+    <meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}"/>	
+	<link rel="stylesheet" href="{% static 'css/lato.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/cas.css' %}"/>
+	<link rel="icon" href="{% static 'icon/favicon.ico' %}" type="image/x-icon"/>
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><!-- ufsc_monitoramento_login --></head>
+
+<body class="login">
+	<header role="banner">
+        <div class="container">
+		    <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
+		        <a class="navbar-brand" href="#"><img src="{% static 'img/vfsc.png' %}" class="logotopa" ></a>
+		        <div class="navbar-nav">
+	               <a class="brand" href="#"> 
+	                   <span class="logotop" style="color:black">idUFSC - Autenticação</span>
+	                   </a>
+		        </div>
+		    </nav>
+	    </div>
+	</header>
+
+
+	<div id="container" class="container">
+	
+	    <div id="content">
+	        <div class="row">
+	            <div id="notices" class="col-sm-12 col-md-7">
+	                <div class="box">
+		<div id="ufsc">
+			<a href="http://ufsc.br/" target="_blank"></a>
+		</div>
+	
+		<div id="trilha">
+			<div><img src="{% static 'img/voce.png' %}" width="74" height="11"></div>
+			<div class="seta2"></div>
+			<div><a href="http://ufsc.br/">UFSC</a></div>
+			<div class="seta2"></div>
+	        <div><a href="#">Autenticação</a></div>
+	        <div>
+	            <div class="seta2"></div>
+	            <div><a href="#">idUFSC</a></div>
+	        </div>
+	        
+	        </div>
+	</div>
+	            </div>
+	            <div class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center">
+	                <div class="tituloSistemaAutenticacao">
+	    <h2 id="idTitulo">Sistema de Autenticação Centralizada</h2>
+	    </div>
+	            </div>
+	        </div>
+		    <div id="content" class="row">
+        <div id="notices" class="d-none d-lg-block col-md-7">
+            <div class="box" id="logoUFSCSetic">
+		<div id="banner">
+			<img src="{% static 'img/banner2.jpg' %}"><!-- <a id="banner_link" href="http://setic.ufsc.br/" target="_blank"
+				title="SeTIC-UFSC">
+				<img src="images/novo/banner2.jpg">
+			</a> --></div>
+	
+		<div id="facilidades">
+			<span class="titulo">Facilidades de uso</span> <br/> 
+			Entre em vários sistemas UFSC se autenticando apenas uma vez.
+		</div>
+	
+	</div>
+        </div>
+        <div class="col-md">
+            <div class="card" id="login">
+                <div class="card-body">
+				{% block content %}
+				{% endblock %}
+			<!--<form method="post" id="fm1">
+
+				<form action='' method='post'>
+				<label for='email'>Email:</label><br>
+				<input type='email' value='{{Algum.comando.Django}}' name='email' 
+				placeholder='Insira seu email' style='width:250px; height:30px'><br>
+				<label for='password'>Senha:</label><br>
+				<input type='password' value='{{Algum.comando.Django}}' name='senha'
+				placeholder='Senha' style='width:250px; height:30px'><br>
+				<input class='btn btn-default' type='submit' value='Acessar' align='middle' 
+				style='height:30px; width:100px'><br>
+				<img src='img/1555425053147.png' height='200px'>
+			</form>
+			{% if error %}
+				<p class='error'>Erro:{{error}}</p>
+			{% endif %}-->
+							<div id="forgotpwd">
+			                    <span><a href="https://pessoa.sistemas.ufsc.br/esqueciSenha?redirectUrl=https%3A%2F%2Fidufsc.ufsc.br%2Fauth" >Recuperar senha</a></span>
+			                </div>
+			                
+			                <div id="autocadastro">
+			                    <span><a href="{% url 'public:signup' %}">Primeiro acesso</a></span>
+			                </div>
+		                </div>
+		            </div>
+			    </form>
+			    
+                <script type="text/javascript">
+                    var i = "Aguarde..."
+                    $( document ).ready(function() {
+                        $("#fm1").submit(function () {
+                            $(":submit").attr("disabled", true);
+                            $(":submit").attr("value", i);
+                            console.log(i);
+                            return true;
+                        });
+                    });
+                </script>
+			    
+                <div id="sidebar">
+
+    </div>
+			</div>
+			</div>
+            <div class="card d-none d-lg-block" id="certificateloginBox">
+			
+	    <div id="certificatelogin" class="card-body">
+	        <span>Autentique-se com seu token </span>
+	        <br>
+	        <img src="{% static 'img/certificado_digital.png' %}" width="122px" height="50px"/></a>
+	    </div>
+	    
+	</div>
+            <div class="card" id="helploginBox">
+	    
+	    <div id="help" class="card-body">
+	        <p><strong>Esta é uma simulação do login UFSC, com motivos representativos para o projeto semestral da 1ª fase de controle e automação</strong></a>
+	    </div>
+	    
+	</div>
+        </div>
+    </div>
+	    </div>
+	</div>
+	<footer class="footer" role="contentinfo">
+		<!-- <footer class="navbar navbar-fixed-bottom"> --><div class="container">
+		    <div id="copyright">
+		        <p>v5.3.4.019</p>
+		    </div>
+	    </div>
+		<!-- </footer> --></footer>
+	<div>
+		<script src="{% static 'js/head.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/cas.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/vfsc.js' %}"></script>
+	</div>
+
+	<script type="text/javascript" src="{% static 'js/zxcvbn.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'js/head.min.js' %}"></script>
+<script src="{% static 'js/store.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cas.js' %}"></script>
+
+<script>
+head.ready(document, function () {
+    if (!window.jQuery) {
+    	var jqueryUrl = "\/webjars\/jquery\/3.3.1\/jquery.min.js"; 
+        head.load(jqueryUrl, loadjQueryUI);
+    } else {
+        notifyResourcesAreLoaded(resourceLoadedSuccessfully);
+    }
+});
+
+function loadjQueryUI() {
+	var jqueryUrl = "\/webjars\/jquery-ui\/1.12.1\/jquery-ui.min.js"; 
+	head.load(jqueryUrl, loadjQueryCookies);
+}
+
+function loadjQueryCookies() {
+	var jqueryUrl = "\/webjars\/jquery-cookie\/1.4.1-1\/jquery.cookie.js"; 
+	head.load(jqueryUrl, notifyResourcesAreLoaded(resourceLoadedSuccessfully));
+}
+
+function notifyResourcesAreLoaded(callback) {
+    if (typeof callback === "function") {
+        callback();
+    }
+}
+</script>
+
+<script>
+    /*<![CDATA[*/
+
+    var trackGeoLocation = false;
+
+    var googleAnalyticsTrackingId = "UA-16369377-12";
+
+    if (googleAnalyticsTrackingId != null && googleAnalyticsTrackingId != '') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', googleAnalyticsTrackingId, 'auto');
+        ga('send', 'pageview');
+    }
+
+    /*]]>*/
+</script>
+
+</body>
+</html>

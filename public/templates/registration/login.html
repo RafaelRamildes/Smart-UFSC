@@ -1,0 +1,48 @@
+{% extends 'login-ufsc.html' %}
+
+{% block content %}
+
+	<style>
+		.button {
+			margin-left: 55px;
+			background-color: #111191; 
+			border: none; 
+			color: white; 
+			padding: 10px 40px; 
+			text-align: center; 
+			text-decoration: none;
+			display: inline-block; 
+			font-size: 16px; 
+			border-radius: 3px; 
+			opacity: 0.8; 
+			transition: 0.3s; 
+			display: inline-block; 
+			cursor: pointer;
+			}
+			
+		.button:hover {opacity: 1;}
+		
+		#id_username {
+		height:30px;
+		width:270px;
+		border:solid 1px grey;
+		border-radius:3px;
+		}
+		
+		#id_password {
+		margin-left:8px;
+		height:30px;
+		width:270px;
+		border:solid 1px grey;
+		border-radius:3px;
+		}
+	</style>
+	
+    <h2> Acesso Unificado </h2>
+    <form method="post">
+		{% csrf_token %} 
+		{{ form.as_p }}
+		<button class="button" type= "submit"> Entrar </button>
+	</form>
+
+{% endblock %}
