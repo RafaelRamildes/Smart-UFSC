@@ -1,0 +1,53 @@
+﻿{% extends 'layout2.html' %}
+	{% block content %}
+		<p style="margin-left:50px; color:grey"><strong>Por Turma</strong></p> 
+		
+		<p style="margin-left:50px; margin-top:0px"><strong>Turma "Tal"</strong></p>
+		
+		<!--Médias em cada prova-->
+		<table style="margin-left:30px">
+			<tr>
+				{% for i in range_prov %}
+					<td>
+						<div style="margin-left:20;	width:{{width_prov}}px; height:150px; background-color:white">p{{i}}</div>
+					</td>
+				{% endfor %}
+			</tr>
+		</table>
+		
+		<!--Se houveram faltas na última prova, porsteriormente o professor deve poder desmarcar os alunos assim que tenha sido feito requerimento-->
+		{% if professor.ausencias_provas %}
+			<p style="margin-left:50px; margin-top:30px"><strong>Ausentes da última prova</strong></p>
+			<table style="margin-left:30px">
+				<tr>
+					{% for i in professor.ausencias_provas %}
+						<td>
+							<div class="alert alert-danger" role="alert" 
+							style="margin-left:20;	width:{{width_ausen}}px; text-align:center; padding-top:15px,padding-bottom:15px">{{i}}</div>
+						</td>
+					{% endfor %}
+				</tr>
+			</table>
+		{% endif %}
+		
+		<!--Linhas verticais mostrando nome dos alunos e suas faltas-->
+		<p style="margin-left:50px; margin-top:30px"><strong>Ausencias Gerais</strong></p>
+		<div style="margin-left:50px;	width:1000px; height:150px; background-color:white">Ausencia por alunos</div>
+		
+		<!--Dados referentes a exercícios-->
+		<p style="margin-left:50px; margin-top:30px"><strong>Lista de exercícios</strong></p>
+		<div style="margin-left:50px;	width:490px; height:150px; background-color:white">porcentagem de alunos que fizeram as listas</div>
+		<div style="margin-left:560px; margin-top:-150px; width:490px; height:150px; background-color:white">porcentagem de acertos nas listas</div>
+		
+		<!--Aulas nos dias da semana-->
+		<p style="margin-left:50px; margin-top:30px"><strong>Aulas da Turma</strong></p>
+		<table style="margin-left:30px">
+			<tr>
+				{% for i in aulas %}
+					<td>
+						<div style="margin-left:20;	width:{{width_aulas}}px; height:150px; background-color:white">{{i}}</div>
+					</td>
+				{% endfor %}
+			</tr>
+		</table>
+	{% endblock %}

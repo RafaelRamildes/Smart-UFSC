@@ -1,0 +1,62 @@
+﻿{% extends 'layout2.html' %}
+	{% block content %}
+		<div style="margin-top:-20px"></div>
+		<p style="margin-left:50px; color:grey"><strong>Provas e Trabalhos</strong></p> 
+		
+		<!--Deve dispor a próxima prova de cada turma de cada turma-->
+		<p style="margin-left:50px; margin-top:0px"><strong>Próximas Provas</strong></p>
+		<table style="margin-left:30px">
+			<tr>
+				{% for i in professor.turmas %}
+					<td>
+						<div style="margin-left:20px; margin-top:5px; height:150px; width:{{width_prov}}px; background-color:white">
+						Turma {{i}}
+						</div>
+					</td>
+				{% endfor %}
+			</tr>
+		</table>
+		
+		<!--Se houverem trabalhos marcados, mostra cada trabalho marcado-->
+		<table style="margin-left:30px">
+			{% if professor.trab_marcados %}
+				<p style="margin-left:50px; margin-top:30px"><strong>Próximos Trabalhos</strong></p>
+				<tr>
+					{% for i in professor.trab_marcados %}
+						<td>
+							<div style="margin-left:20px; margin-top:5px; height:150px; width:{{width_trab}}px; background-color:white">Turma {{i}}</div>
+						</td>
+					{% endfor %}
+				</tr>
+			{% endif %}
+		</table>
+		
+		<!--Dispõem sobre as médias de notas de cada turma em cada prova--> 
+		<p style="margin-left:50px; margin-top:30px"><strong>Média de Notas</strong></p>
+		{% for i in before_lines %}
+			<div style="margin-left:50px; margin-top:20px; height:150px; width:490px; background-color:white">
+				<a href="{% url 'docente:turmas' %}" style="text-decoration:none">Turma {{i}}</a>
+			</div>
+		{% endfor %}
+		<div style="margin-left:560px; margin-top:-{{len_med_not}};">
+		{% for i in after_lines %}
+			<div style="margin-top:20px; height:150px; width:490px; background-color:white">
+				<a href="{% url 'docente:turmas' %}" style="text-decoration:none">Turma {{i}}</a>
+			</div>
+		{% endfor %}
+		</div>
+		
+		<!--Cria um display das médias gerais de cada turma-->
+		<p style="margin-left:50px; margin-top:30px"><strong>Médias Gerais</strong></p>
+		<table style="margin-left:30px">
+			<tr>
+				{% for i in professor.turmas %}
+					<td>
+						<div style="margin-left:20px; margin-top:5px; height:150px; width:{{width_prov}}px; background-color:white">
+						Turma {{i}}
+						</div>
+					</td>
+				{% endfor %}
+			</tr>
+		</table>
+	{% endblock %}

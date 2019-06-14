@@ -1,0 +1,107 @@
+﻿<DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<script type="text/javascript" src="{% static 'aluno/js/zxcvbn.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/vfsc.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/store.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/jquery-ui.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/jquery.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/jquery.cookie.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/head.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/cas.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/bootstrap.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/bootstrap.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/bootstrap.bundle.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'aluno/js/bootstrap.bundle.js'%}"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/bootstrap.min.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/bootstrap.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/bootstrap-grid.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/bootstrap-grid.min.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/bootstrap-reboot.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/bootstrap-reboot.min.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/cas.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/fontawesome-all.min.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/lato.min.css'%}" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'aluno/css/all.min.css'%}" crossorigin="anonymous">
+	</head>
+	<body style='background-color:#f0fefe'>
+		
+		
+		<nav class="navbar navbar-expand-lg navbar-light" style='background-color:#000080; margin-left:200px; margin-top:{{top}}px; height:40px'>
+		
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" style='color:white' href="#">Dashboards <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style='color:white' href="#">Comunidade</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style='color:white' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Meus Alunos
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown" style=" box-shadow:1px 1px 5px grey">
+							{% for i in professor.turmas %}
+								<a class="dropdown-item" href="#"> Turma {{i}}</a>
+							{% endfor %}
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Coordenação do curso</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-0 my-lg-">
+					<li class="nav-item dropdown" style='list-style:none'>
+						<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:white'>
+						<strong>{{professor.name}}</strong>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left:-13px; box-shadow:1px 1px 5px grey">
+							<a class="dropdown-item" href="https://moodle.ufsc.br/">Moodle</a>
+							<a class="dropdown-item" href="https://cagr.sistemas.ufsc.br/">CaGR</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Sair</a>
+						</div>
+					</li>
+					<img  src="{% static 'img/Entrada-UFSC-Trindade.jpg'%}" style='width: 30px; height: 28px; border-top:2px; border-radius:500px'>
+				</form>
+			</div>
+			
+		</nav>
+		
+		
+		<div class="list-group">
+			<a href="{% url 'docente:home' %}" class="list-group-item list-group-item-action"style='width:200px; margin-top:-50px;text-align:center; background-color:#e9e9e9'><img class="navbar-brand" href="#" src="{% static 'img/smartLogo.png'%}" style='width:100px'>
+			</a>
+			<a href="{% url 'docente:home' %}" class="list-group-item list-group-item-action" style='width:200px; background-color:#e9e9e9'>Dados Gerais</a>
+			<div class="dropdown" style='list-style:none'>
+				<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+				style='width:200px; height:40px; background-color:#e9e9e9; color:#4d4d4d; padding-top:10px; padding-left:0px; padding-right:90px; margin-left:0px; border:solid 1px #cccccc;border-radius:0; border-bottom:none'>
+				Turmas
+				</a>
+				<div   class="dropdown-menu" aria-labelledby="dropdownMenuLink" style=" box-shadow:1px 1px 5px grey">
+				{% for i in professor.turmas %}
+					<a class="dropdown-item" href="{% url 'docente:turmas' %}"> Turma {{i}}</a>
+				{% endfor %}
+				</div>
+			</div>
+			<a href="{% url 'docente:avalia' %}" class="list-group-item list-group-item-action" style='width:200px; background-color:#e9e9e9'>Provas e Trabalhos</a>
+			<a href="#" class="list-group-item list-group-item-action" style='width:200px; background-color:#e9e9e9'>Matérias</a>
+			<a href="#" class="list-group-item list-group-item-action" style='width:200px; background-color:#e9e9e9'>Notícias</a>
+			<a href="#" class="list-group-item list-group-item-action" style='width:200px; height:155%;text-align:center; font-size:50; background-color:#e9e9e9'>...</a>
+		</div>
+		<div style="margin-left:200px; margin-top:-1200px">
+			{% block content %}
+			{% endblock %}
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	</body>
+</html>

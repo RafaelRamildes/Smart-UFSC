@@ -1,0 +1,114 @@
+﻿	#logo{
+	width:200px; 
+	margin-left:560px; 
+	margin-top:30px
+	}
+	
+	#titulo{
+		text-shadow: 1px 1px 0 #000,
+		-1px 1px 0 #000,
+		1px -1px 0 #000,
+		-1px -1px 0 #000,
+		0px 1px 0 #000,
+		0px -1px 0 #000,
+		-1px 0px 0 #000,
+		1px 0px 0 #000,
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		1px -1px 0 #000,
+		-1px -1px 0 #000,
+		0px 1px 0 #000,
+		0px -1px 0 #000,
+		-1px 0px 0 #000,
+		1px 0px 0 #000,
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		1px -1px 0 #000,
+		-1px -1px 0 #000,
+		1px 1px 0 #000,
+		-1px 1px 0 #000,
+		1px -1px 0 #000,
+		-1px -1px 0 #000;
+		font-size:50; 
+		margin-left:300px; 
+		margin-top:100px; 
+		color:red;
+	}	
+	
+	.main {
+		width:1100px;
+		height:680px;
+		background:white;
+		position: relative;
+		margin-left:100px;
+		margin-top: 50px;
+	}
+	
+	#parag1{
+		text-indent:50px;
+		margin-left:150px;
+		margin-right:150px;
+		text-align:justify;
+	}
+		
+	#mid{
+		background-color:#080B91; 
+		width:600px;
+		height:252px;
+		margin-top:30px;
+	}
+	
+	#parag2{
+	color:white; 
+	text-indent:50px; 
+	margin-left:150px; 
+	margin-right:170px; 
+	text-align:justify
+	}
+	
+	#meio{
+		position:relative;
+		margin-left:595px;
+		margin-top:-270px;
+	}
+	
+	#parag3{
+	text-indent:50px;
+	margin-left:300px;
+	margin-right:150px;
+	text-align:justify
+	}
+	
+	#baixo{
+		width:100px;
+		margin-left:50px;
+		margin-top:-150px;
+	}
+	
+	.button {
+		align:center;
+		width:150px;
+		height:58px;
+		background:#912929 ;
+		position: relative;
+		margin-left:545px;
+		margin-top: 30px;
+	}	
+	
+	#loger{
+	margin-left:15px; 
+	margin-top:-20px;
+	color:white;
+	font-size:20
+	}
+	
+	#sc{
+	margin-left:590px; 
+	width:60px
+	}
+	
+	#br{
+	margin-left:670px; 
+	margin-top:-45px;
+	width:40px
+	}
