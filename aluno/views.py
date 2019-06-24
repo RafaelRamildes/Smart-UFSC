@@ -77,7 +77,7 @@ def index(request):
     return render(
         request,
         r"..\templates\layout-Geral.html",
-        {'materias':Subway.materias.keys(),                 # Serve para a cropdown " mate´rias "                                   (OBRIGATÓRIO)
+        {'materias':Subway.materias.keys(),                 # Serve para a dropdown " mate´rias "                                   (OBRIGATÓRIO)
          'professores':Subway.professores,                  # Serve para a dropdown "professores"                                   (OBRIGATÓRIO)
          'coluna1':list(Subway.materias.keys())[:div],      # Faz das chaves do dicionário uma lista e extrai só os primeiros itens
          'coluna2':list(Subway.materias.keys())[div:2*div], # Faz das chaves do dicionário uma lista e extrai só os itens do meio

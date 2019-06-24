@@ -19,19 +19,9 @@ from django.urls import path
 
 urlpatterns = [
 
-    path('',                        include('public.urls', namespace= 'public')),
-    path('signup/',                 include('public.urls', namespace= 'public')),
-    path('accounts/',               include('public.urls', namespace= 'public')),
-    path('secret/',                 include('public.urls', namespace= 'public')),
-    
-    path('/Aluno',                  include( 'aluno.urls', namespace = 'aluno')),
-    path('/Matérias',               include( 'aluno.urls', namespace = 'aluno')),
-    path('/disciplina',             include( 'aluno.urls', namespace = 'aluno')),
-    path('/ProvasETrabalhos',       include( 'aluno.urls', namespace = 'aluno')),
+    path('',            include('public.urls', namespace= 'public')),
+    path('Aluno/',      include( 'aluno.urls', namespace = 'aluno')),
+    path('Docente/',    include('docente.urls',namespace='docente')),
+    path('admin/',      admin.site.urls),
 
-    path('/Docente',                include('docente.urls',namespace='docente')),
-    path('/avaliação',              include('docente.urls',namespace='docente')),
-    path('/turmas',                 include('docente.urls',namespace='docente')),
-    
-    path('admin/', admin.site.urls),
 ]
