@@ -15,7 +15,10 @@
 		{% endif %}
 		
 		<!--Uma linha de desempenho na metéria-->
-		<div style="margin-left:50px; margin-top:30px; height:300px; width:648px; background-color:white">Frequência</div>
+		<div style="margin-left:50px; margin-top:30px; height:300px; width:648px; background-color:white">Frequência
+			<canvas id="presenca_x_restantes_individual"></canvas>
+			<script src="{% static 'js/new_plot/presenca_x_restantes_individual.js' %}"></script>
+		</div>
 		<div style="margin-left:718px; margin-top:-300px; height:300px; width:324px; background-color:white">Nota Relativo A Turma</div>
 		
 		<!--Uma linha para melhorar o desempenho-->
